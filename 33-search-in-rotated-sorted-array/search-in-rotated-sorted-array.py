@@ -9,7 +9,8 @@ class Solution:
             m = s + (e-s)//2
             if nums[m] == target:
                 return m
-            elif nums[s] <= nums[m]:    # left sorted array
+            
+            if nums[s] <= nums[m]:    # left sorted array
                 if (target <= nums[m] and target >= nums[s]):
                     e = m - 1
                 else:
