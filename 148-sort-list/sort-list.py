@@ -57,5 +57,3 @@ class Solution:
         mid = midprev.next
         midprev.next = None
         return mid
-
-        return slow
