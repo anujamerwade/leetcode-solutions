@@ -11,9 +11,7 @@ class Solution:
         while temp:
             temp = temp.next
             total += 1
-        print("total", total)
         middle = total//2
-        print("middle", middle)
 
         hops = 0
         temp = head
