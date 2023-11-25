@@ -23,6 +23,7 @@ class Solution:
 
         fast, slow = head, head
 
+        # by the time fast has reached the end, the slow pointer will have covered half the distance
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
