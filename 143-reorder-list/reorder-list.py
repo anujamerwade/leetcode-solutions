@@ -22,6 +22,7 @@ class Solution:
             reverseHalf.next = head
             reverseHalf = temp2
 
+        # next of tail to null
         if head:
             head.next = None
 
