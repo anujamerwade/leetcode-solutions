@@ -16,11 +16,11 @@ class Solution:
         # compare head and mid
         while head and reversedHalf:
             if head.val != reversedHalf.val:
-                break   # because we want to rereverse it
+                return False   # because we want to rereverse it
             head = head.next
             reversedHalf = reversedHalf.next
         
-        self.reverseList(rereverseHead)
+        # self.reverseList(rereverseHead)
 
         # if we reach here without the break condition
         return not head or not reversedHalf
