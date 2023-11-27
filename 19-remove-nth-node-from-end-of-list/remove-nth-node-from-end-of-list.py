@@ -8,8 +8,6 @@ class Solution:
         length = 0
 
         curr = head
-        dummy = ListNode(0)
-        dummy.next = head
 
         while curr:
             curr = curr.next
@@ -17,18 +15,15 @@ class Solution:
         
         skip = length - n
 
-        # prev = self.get(skip, head)
-        # print(prev)
-        curr = dummy
-        for i in range(skip):
+        # here head itself would be removed so result would be everything after the head
+        if skip == 0:
+            return head.next
+
+        # restore curr to head
+        curr = head
+        for i in range(skip-1):
             curr = curr.next
         print(curr)
 
         curr.next = curr.next.next
-        return dummy.next
-    
-    # def get(self, idx, head):
-    #     node = head
-    #     for i in range(idx):
-    #         node = node.next
-    #     return node
+        return head
