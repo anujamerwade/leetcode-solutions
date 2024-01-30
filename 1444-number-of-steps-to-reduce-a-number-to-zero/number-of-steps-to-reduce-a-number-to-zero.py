@@ -10,10 +10,9 @@ class Solution:
             # even number
             num /= 2
             c += 1
-            return self.helper(num, c)
         else:
             num -= 1
             c += 1
-            return self.helper(num, c)
+        return self.helper(num, c)
 
         
