@@ -6,11 +6,18 @@ class Solution:
         l = 0
         r = len(s) - 1
 
-        while l <= r:
+        return self.reversal(s, l, r)
+
+    def reversal(self, s, l, r):
+        if l <= r:
             temp = s[l]
             s[l] = s[r]
             s[r] = temp
 
-            l += 1
-            r -= 1
+
+            return self.reversal(s, l+1, r-1)
+
+            
+        else:
+            pass
         
