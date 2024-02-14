@@ -28,4 +28,4 @@ class Solution:
             else:
                 nums[hi], nums[mid] = nums[mid], nums[hi]
                 hi -= 1
-        return nums
+        # return nums
