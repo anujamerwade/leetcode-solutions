@@ -1,12 +1,14 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        c = 0
-        res = 0
+        freq = defaultdict(int)
 
-        for n in nums:
-            if c == 0:
-                res = n
-            c += (1 if n == res else - 1)   # add 1 or subtract 1
-        return res
+        for num in nums:
+            freq[num] += 1
+        
+        val_list = list(freq.values())
+        key_list = list(freq.keys())
+        majorityEleCount = max(val_list)
 
+        ans = val_list.index(majorityEleCount)
+        return key_list[ans]
         
