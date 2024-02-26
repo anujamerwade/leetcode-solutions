@@ -6,9 +6,11 @@ class Solution:
             freq[num] += 1
         
         val_list = list(freq.values())
-        key_list = list(freq.keys())
+        # key_list = list(freq.keys())
         majorityEleCount = max(val_list)
+        ans = [i for i in freq if freq[i]==majorityEleCount]
 
-        ans = val_list.index(majorityEleCount)
-        return key_list[ans]
+        # ans = val_list.index(majorityEleCount)
+        # return key_list[ans]
+        return ans[0]
         
