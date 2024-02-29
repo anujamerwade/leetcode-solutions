@@ -7,18 +7,22 @@ class Solution:
 
     def nqueens(self, board, row, n, result):
         if row == n:
+            # append row with the Qs and the dots
             result.append(["".join(row) for row in board])
             return
+
         for col in range(n):
+            # place Q if it is safe
             if self.isSafe(board, row, col, n):
-                board[row][col] = 'Q'
-                self.nqueens(board, row + 1, n, result)
-                board[row][col] = '.'
+                board[row][col] = "Q"
+                self.nqueens(board, row+1, n, result)
+                # backtrack
+                board[row][col] = "."
 
     def isSafe(self, board, row, col, n):
-        # check vertical
+        # check vertical row
         for r in range(row):
-            if board[r][col] == 'Q':
+            if board[r][col] == "Q":
                 return False
         
         # check upper left diagonal
@@ -38,3 +42,6 @@ class Solution:
                 return False
         
         return True
+
+
+        
