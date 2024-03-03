@@ -23,7 +23,6 @@ class Solution:
         curr = head
         for i in range(skip-1):
             curr = curr.next
-        print(curr)
 
         curr.next = curr.next.next
         return head
