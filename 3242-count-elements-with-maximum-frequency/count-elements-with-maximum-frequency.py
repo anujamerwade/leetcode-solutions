@@ -14,3 +14,5 @@ class Solution:
             if n == max_freq:
                 ans += max_freq
         return ans
+    # TC: O(n)
+    # SC: O(n)
