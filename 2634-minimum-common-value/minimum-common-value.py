@@ -12,3 +12,5 @@ class Solution:
                 # both are equal
                 return nums1[i]
         return -1
+# TC: O(n)
+# SC: O(1)
