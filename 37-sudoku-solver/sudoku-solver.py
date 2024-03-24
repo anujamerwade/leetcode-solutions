@@ -59,3 +59,6 @@ class Solution:
                     return False
             
         return True
+
+# TC: O(9^(n^2))
+# SC: O(n^2)
