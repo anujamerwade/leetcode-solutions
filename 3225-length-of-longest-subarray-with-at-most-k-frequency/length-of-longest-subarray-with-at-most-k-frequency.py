@@ -12,5 +12,6 @@ class Solution:
                 freq[nums[start]] -= 1
             length = max(length, end - start)
 
-        return length       
-        
+        return length
+# TC: O(n)
+# SC: O(n)
