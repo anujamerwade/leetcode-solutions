@@ -25,14 +25,4 @@ class Solution:
                     q.append(currNode.right)
             ans.append(levelNodes)
         
-        s, e, = 0, len(ans) - 1
-
-        while s <= e:
-            temp = ans[s]
-            ans[s] = ans[e]
-            ans[e] = temp
-
-            s += 1
-            e -= 1
-        
-        return ans
+        return ans[::-1]
