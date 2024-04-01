@@ -26,3 +26,5 @@ class Solution:
             leftMost = leftMost.left
         
         return root
+    # TC: O(n)
+    # SC: O(1)
