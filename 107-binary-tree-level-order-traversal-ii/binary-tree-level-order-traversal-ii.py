@@ -7,7 +7,7 @@
 class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
         q = deque()
-        ans = []
+        ans = deque()
 
         if not root:
             return ans
@@ -23,6 +23,6 @@ class Solution:
                     q.append(currNode.left)
                 if currNode.right:
                     q.append(currNode.right)
-            ans.append(levelNodes)
+            ans.appendleft(levelNodes)
         
-        return ans[::-1]
+        return ans
