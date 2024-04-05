@@ -8,10 +8,4 @@ class Solution:
             else:
                 stack.append(ch)
         
-        if not stack:
-            return ""
-        else:
-            ans = ""
-            for ch in stack:
-                ans += ch
-            return ans
+        return ''.join(stack)
