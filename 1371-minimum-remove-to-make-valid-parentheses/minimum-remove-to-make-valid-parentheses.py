@@ -1,24 +1,25 @@
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
-        open = 0
-        arr = list(s)
+        stack = []
+        remove_indices = set()
 
-        # from left to right
-        for i in range(len(arr)):
-            if arr[i] == "(":
-                open += 1
-            elif arr[i] == ")":
-                if open == 0:
-                    arr[i] = "*"
+        # Iterate through the string to find unmatched parentheses
+        for i, char in enumerate(s):
+            if char == "(":
+                stack.append(i)
+            elif char == ")":
+                if stack:
+                    stack.pop()
                 else:
-                    open -= 1
+                    remove_indices.add(i)
 
-        # from right to left if we encounter extra open braces
-        for i in range(len(arr)-1, -1, -1):
-            if open > 0 and arr[i] == "(":
-                arr[i] = "*"
-                open -= 1
+        # Mark remaining unmatched opening parentheses
+        remove_indices.update(stack)
 
-        result = ''.join(c for c in arr if c != '*')
+        # Construct the result string without the marked indices
+        result = []
+        for i, char in enumerate(s):
+            if i not in remove_indices:
+                result.append(char)
 
-        return result
+        return ''.join(result)
