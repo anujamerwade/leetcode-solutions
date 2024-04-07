@@ -11,25 +11,17 @@ class Solution:
         """
         if root is None:
             return
+        
+        curr = root
 
-        q = deque()
+        while curr:
+            if curr.left:
+                temp = curr.left
+                while temp.right:
+                    temp = temp.right
+                temp.right = curr.right
+                curr.right = curr.left
+                curr.left = None
+            curr = curr.right
 
-        def traversal(root):
-            if root == None:
-                return
-            q.append(root)
-            traversal(root.left)
-            traversal(root.right)
-            
-        traversal(root)
-
-        while q:
-            node = q.popleft()
-            node.left = None
-            if q:
-                node.right = q[0]
-            else:
-                node.right = None
-
-# TC: O(n)
-# SC: O(n)
+       
