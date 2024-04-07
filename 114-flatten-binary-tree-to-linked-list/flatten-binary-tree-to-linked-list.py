@@ -30,3 +30,6 @@ class Solution:
                 node.right = q[0]
             else:
                 node.right = None
+
+# TC: O(n)
+# SC: O(n)
