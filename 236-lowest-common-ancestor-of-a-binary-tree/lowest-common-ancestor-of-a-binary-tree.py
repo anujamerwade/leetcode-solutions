@@ -24,3 +24,5 @@ class Solution:
         # if left is found and no answer for right then the other answer is in the left
         # subtree hence ancestor will be the left ode itself and vice versa
         return right if not left else left
+# TC: O(n)
+# SC: O(height) = O(logn)
