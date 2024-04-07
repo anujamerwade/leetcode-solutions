@@ -12,7 +12,7 @@ class Solution:
         if node is None:
             return True
         
-        if (low != None and node.val <= low) or (high!= None and node.val >= high):
+        if (node.val <= low) or (node.val >= high):
             return False
 
         left = self.checkBST(node.left, low, node.val)
