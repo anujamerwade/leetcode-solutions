@@ -7,8 +7,9 @@
 class Solution:
     
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        cnt = [0]
+        cnt = 0
         def helper(root, k):
+            nonlocal cnt
             if root == None:
                 return None
 
@@ -16,9 +17,9 @@ class Solution:
 
             if left != None:
                 return left
-            cnt[0] += 1
+            cnt += 1
 
-            if cnt[0] == k:
+            if cnt == k:
                 return root.val
             
             return helper(root.right, k)
