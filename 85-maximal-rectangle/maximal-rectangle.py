@@ -6,12 +6,6 @@ class Solution:
         r = len(matrix)
         c = len(matrix[0])
 
-        # if c == 1:
-        #     maxAreaFinal = 0
-        #     for row in matrix:
-        #         maxAreaFinal = max(maxAreaFinal, int(row[0]))
-        #     return maxAreaFinal
-
         currRow = [0]*c
         maxAreaFinal = self.largestRectangleArea(currRow)
 
@@ -21,7 +15,6 @@ class Solution:
                     currRow[j] += 1
                 else:
                     currRow[j] = 0
-            # print(currRow)
             currArea = self.largestRectangleArea(currRow)
 
             maxAreaFinal = max(currArea, maxAreaFinal)
@@ -55,3 +48,6 @@ class Solution:
         else:
             area = heights[popped]*(i-1-stack[-1])
         return max(area, maxArea)
+
+# TC: O(r*c)
+# SC: (n)
