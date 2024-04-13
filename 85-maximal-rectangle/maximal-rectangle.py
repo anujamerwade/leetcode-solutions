@@ -49,5 +49,5 @@ class Solution:
             area = heights[popped]*(i-1-stack[-1])
         return max(area, maxArea)
 
-# TC: O(r*c)
+# TC: O(m*n) i.e. row and col
 # SC: (n)
