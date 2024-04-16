@@ -18,7 +18,7 @@ class Solution:
 
         node = TreeNode(root)
 
-        node.left = self.buildTree(preorder.copy()[1: index+1], inorder.copy()[:index])
-        node.right = self.buildTree(preorder.copy()[index+1:], inorder.copy()[index+1:])
+        node.left = self.buildTree(preorder[1: index+1], inorder[:index])
+        node.right = self.buildTree(preorder[index+1:], inorder[index+1:])
 
         return node
