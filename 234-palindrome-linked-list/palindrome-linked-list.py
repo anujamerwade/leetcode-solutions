@@ -45,13 +45,11 @@ class Solution:
         if not head:
             return head
         prev = None
-        pres = head
-        next1 = pres.next
 
-        while pres:
-            pres.next = prev
-            prev = pres
-            pres = next1
-            if next1:
-                next1 = next1.next
+        while head:
+            temp = head.next
+            head.next = prev
+            prev = head
+            head = temp
+            
         return prev
