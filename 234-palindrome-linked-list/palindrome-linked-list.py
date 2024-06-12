@@ -11,21 +11,29 @@ class Solution:
 
         # reverse the linkedlist from mid to end
         reversedHalf = self.reverseList(mid)
-        rereverseHead = reversedHalf
+        # rereverseHead = reversedHalf
 
-        # compare head and mid
-        while head and reversedHalf:
-            if head.val != reversedHalf.val:
-                break   # because we want to rereverse it
-            head = head.next
-            reversedHalf = reversedHalf.next
+        # # compare head and mid
+        # while head and reversedHalf:
+        #     if head.val != reversedHalf.val:
+        #         break   # because we want to rereverse it
+        #     head = head.next
+        #     reversedHalf = reversedHalf.next
         
-        self.reverseList(rereverseHead)
+        # self.reverseList(rereverseHead)
 
-        # if we reach here without the break condition
-        return not head or not reversedHalf
+        # # if we reach here without the break condition
+        # return not head or not reversedHalf
 
-        
+        # check palindrome
+        left, right = head, reversedHalf
+        while right:
+            if left.val != right.val:
+                return False
+            left = left.next
+            right = right.next
+        return True
+
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         fast, slow = head, head
 
@@ -42,9 +50,9 @@ class Solution:
         # null < 1 < 2 < 3 < 4 < 5
         
         # iterative method
-        if not head:
-            return head
+ 
         prev = None
+        # curr = head
 
         while head:
             temp = head.next
