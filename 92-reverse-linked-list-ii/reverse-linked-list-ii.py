@@ -25,11 +25,15 @@ class Solution:
         j = 0
         while j < right - left + 1 and curr:
             # iterative method
-            curr.next = prev
+            # curr.next = prev
+            # prev = curr
+            # curr = next1
+            # if next1:
+            #     next1 = next1.next
+            next_node = curr.next
+            curr.next = prev 
             prev = curr
-            curr = next1
-            if next1:
-                next1 = next1.next
+            curr = next_node
 
             j += 1
         
